@@ -16,24 +16,39 @@ const ToolsPage: React.FC = () => {
   return (
     <div className="tools-page">
       <div className="tools-content-wrapper">
-        <nav className="tools-nav-sidebar">
+        <nav className="tools-nav-sidebar" aria-label="Tools categories navigation">
 
-          <h2>Networks</h2>
+          <h2 id="networks-nav">Networks</h2>
           {networksProjects.map(project => (
-            <a key={project.id} href={project.projectUrl} className="tool-link-sidebar">
+            <a 
+              key={project.id} 
+              href={project.projectUrl} 
+              className="tool-link-sidebar"
+              aria-describedby="networks-nav"
+            >
               {project.name.split(' - ')[0]}
             </a>
           ))}
 
-          <h2>Human Pose Recognition</h2>
+          <h2 id="pose-nav">Human Pose Recognition</h2>
           {humanPoseProjects.map(project => (
-            <a key={project.id} href={project.projectUrl} className="tool-link-sidebar">
+            <a 
+              key={project.id} 
+              href={project.projectUrl} 
+              className="tool-link-sidebar"
+              aria-describedby="pose-nav"
+            >
               {project.name.split(' - ')[0]}
             </a>
           ))}
-          <h2>Galaxy Analysis</h2>
+          <h2 id="galaxy-nav">Galaxy Analysis</h2>
           {galaxiesProjects.map(project => (
-            <a key={project.id} href={project.projectUrl} className="tool-link-sidebar">
+            <a 
+              key={project.id} 
+              href={project.projectUrl} 
+              className="tool-link-sidebar"
+              aria-describedby="galaxy-nav"
+            >
               {project.name.split(' - ')[0]}
             </a>
           ))}
@@ -43,9 +58,14 @@ const ToolsPage: React.FC = () => {
               {project.name.split(' - ')[0]}
             </a>
           ))} */}
-          <h2>Cell Tracking</h2>
+          <h2 id="cell-nav">Cell Tracking</h2>
           {cellTrackingProjects.map(project => (
-            <a key={project.id} href={project.projectUrl} className="tool-link-sidebar">
+            <a 
+              key={project.id} 
+              href={project.projectUrl} 
+              className="tool-link-sidebar"
+              aria-describedby="cell-nav"
+            >
               {project.name.split(' - ')[0]}
             </a>
           ))}

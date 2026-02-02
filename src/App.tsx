@@ -1,4 +1,3 @@
-//import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -11,8 +10,11 @@ function App() {
   return (
     <Router>
       <div className="App min-h-screen flex flex-col">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <Header />
-        <main className="flex-grow">
+        <main id="main-content" className="flex-grow" role="main">
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/tools" element={<ToolsPage />} />

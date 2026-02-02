@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom';
 
 const NotFound: React.FC = () => {
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>404</h1>
-      <h2 style={styles.subtitle}>Page Not Found</h2>
+    <div style={styles.container} role="main">
+      <h1 style={styles.title}>
+        404
+        <span style={styles.srOnly}> Error</span>
+      </h1>
+      <p style={styles.subtitle} role="heading" aria-level={2}>Page Not Found</p>
       <p style={styles.message}>
         The page you're looking for doesn't exist or has been moved.
       </p>
-      <Link to="/" style={styles.link}>
+      <Link to="/" style={styles.link} aria-label="Return to Hayes Lab home page">
         Return to Home
       </Link>
     </div>
@@ -36,6 +39,18 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontSize: '2rem',
     color: '#333',
     margin: '10px 0',
+    fontWeight: 'bold',
+  },
+  srOnly: {
+    position: 'absolute',
+    width: '1px',
+    height: '1px',
+    padding: '0',
+    margin: '-1px',
+    overflow: 'hidden',
+    clip: 'rect(0, 0, 0, 0)',
+    whiteSpace: 'nowrap',
+    borderWidth: '0',
   },
   message: {
     fontSize: '1.2rem',

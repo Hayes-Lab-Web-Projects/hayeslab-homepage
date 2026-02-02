@@ -74,6 +74,14 @@
   color: white;
 }
 
+.social-links a:focus,
+.footer-contact a:focus,
+.footer-social a:focus {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 .footer-copyright {
   margin-top: 2rem;
   text-align: center;

@@ -1,13 +1,39 @@
-/* src/App.css */
 
 html, body {
   margin: 0;
   height: 100%;
-  /* Use the sophisticated font stack you provided */
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   background-color: #f0f2f5;
   color: #333;
   overscroll-behavior: none; /*stops rubber-band overscroll */
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .App {
@@ -25,16 +51,13 @@ main {
   margin: 0 auto;
 }
 
-/* Header Styles */
+
 .header {
   background-color: #507DCD;
-  /* Blue background */
   padding: 15px 20px;
-  /* Consistent padding on all sides */
   border-bottom: none;
   display: flex;
   justify-content: space-between;
-  /* Keeps Hayes Lab left, Nav right */
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
@@ -42,57 +65,38 @@ main {
   width: 100%;
   z-index: 1000;
   box-sizing: border-box;
-  /* Ensures padding is included in width calculation */
 }
 
 .site-logo-container {
   display: flex;
-  /* Make it a flex container */
   align-items: center;
-  /* Vertically align items */
   text-decoration: none;
-  /* Remove underline from the link */
   color: white;
-  /* Ensure inherited text color is white */
 }
 
 .site-logo {
   font-size: 24px;
   font-weight: 450;
   color: white;
-  /* White text for logo */
   text-decoration: none;
 }
 
 .site-logo-text {
   font-size: 24px;
-  /* Maintain font size */
   font-weight: normal;
-  /* Keep non-bold */
   color: white;
-  /* Ensure text color is white */
-  /* This span is now what receives the text styling previously on .site-logo */
 }
 
 .sana-logo {
   height: 40px;
-  /* Adjust height as needed */
   margin-right: 10px;
-  /* Space between logo and text */
-  /* If the logo has a transparent background, you might not need to worry about its color */
-  /* If it's a monochrome logo, ensure it appears white on the blue background */
 }
 
 .header-nav {
   display: flex;
   gap: 25px;
-  /* Spacing between nav links */
   margin: 0;
-  /* Reset margin */
   padding: 0;
-  /* Reset padding */
-  /* Optional: If you want nav items to push to the very right edge *within the nav's space*
-     and not be spread by the main header's justify-content, you could add: */
   /* justify-content: flex-end; */
 }
 
@@ -107,15 +111,12 @@ main {
   font-weight: 475;
   transition: color 0.2s ease-in-out;
   white-space: nowrap;
-  /* Prevent text from wrapping, keeping links on one line */
 }
 
 .header-nav .nav-link:hover {
   color: #cce5ff;
-  /* Lighter blue on hover for contrast */
 }
 
-/* New: Landing Page Styles */
 .landing-page {
   display: flex;
   flex-direction: column;
@@ -125,7 +126,6 @@ main {
   /* align-items: center; */
   /* min-height: calc(100vh - 80px); */
   height: fit-content;
-  /* Adjust height based on header height */
   /* text-align: center; */
 
 }
@@ -142,7 +142,6 @@ main {
   line-height: 1.5;
 }
 
-/* Tools Page Specific Styles  */
 .tools-page {
   padding: 20px 0;
 }
@@ -226,10 +225,10 @@ main {
   padding: 10px;
 }
 
-.project-content {
-  /* flex-grow: 1; 
-  min-width: 0; */
-}
+/* .project-content {
+  flex-grow: 1; 
+  min-width: 0;
+} */
 
 .project-title {
   font-size: 22px;
@@ -276,7 +275,6 @@ main {
     height: 200px;
   }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -290,7 +288,6 @@ main {
     gap: 10px;
     align-items: center;
     width: 100%;
-    /* Ensure it takes full width for centering on small screens */
   }
 
   .header-nav .nav-link {
@@ -314,12 +311,10 @@ main {
 
   .landing-page h1 {
     font-size: 3em;
-    /* Smaller on mobile */
   }
 
   main {
     padding-top: 120px;
-    /* Example, adjust as needed if header height changes significantly */
   }
 }
 
@@ -359,10 +354,59 @@ main {
   color: #0056b3;
 }
 
+.tool-link-sidebar:focus {
+  outline: 3px solid #507DCD;
+  outline-offset: 2px;
+  background-color: #e9ecef;
+}
+
 .tools-main-content {
   flex-grow: 1;
-  min-width: 0; /* Prevents flex item from overflowing */
 }
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid #507DCD;
+  outline-offset: 2px;
+}
+
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible),
+select:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #507DCD;
+  outline-offset: 2px;
+}
+
+/* .header-nav .nav-link:focus,
+.header-nav a:focus {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.project-link-title:focus {
+  outline: 3px solid #507DCD;
+  outline-offset: 2px;
+  border-radius: 4px;
+
+  min-width: 0;
+} */
 
 @media (max-width: 1024px) {
   .tools-content-wrapper {
