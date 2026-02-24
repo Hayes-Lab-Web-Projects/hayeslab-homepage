@@ -108,7 +108,7 @@ const projects: Project[] = [
     imageUrl: '/assets/sparcfire.jpg',
     description: 'Given an approximately centered image of a spiral galaxy, this tool finds, centers, and sizes \
             the galaxy and then automatically extracts structural information about the spiral arms. For each arm segment found, we list the pixels in that segment, allowing image analysis on a per-arm-segment basis. ',
-    projectUrl: 'https://github.com/waynebhayes/SpArcFiRe',
+    projectUrl: 'https://sparcfire.ics.uci.edu',
   },
 
   // classifiers-pvalues
