@@ -19,7 +19,7 @@ const projects: Project[] = [
     name: 'Global Network Alignment (SANA)',
     imageUrl: '/assets/SANA.gif',
     description: 'The Simulating Annealing Network Aligner (SANA) is designed originally to align protein-protein interaction (PPI) networks, but now is able to align arbitrary undirected graphs, weighted on unweighted. It can produce near-optimal alignments of PPI-sized networks in about an hour, and it has been used to successfully align networks with up to 100,000 nodes and 100 million edges (though those alignments take about a week of CPU to complete).',
-    projectUrl: '/sana', // Placeholder link
+    projectUrl: 'https://sana.ics.uci.edu/', //Temporarily send to old working SANA Site
   },
   {
     id: 'local network alignment', // blant
