@@ -61,7 +61,7 @@ const projects: Project[] = [
     id: 'pose prediction',
     category: 'human-pose-recognition',
     name: 'Pose Prediction',
-    imageUrl: '../public/assets/pose-sample.png',
+    imageUrl: '/assets/pose-under-development.svg',
     description: 'Estimating a person\'s \"pose\" (ie., the relative location of their limbs represented as a "skeleton") from a 2D image has many applications and is an active research area. There are many distinct data sets: each uses a different camera, different people, and in a different location; there are even slighly different skeletal representations between datasets. In this project we have a preliminary working method that works across datasets; our problem is testing it across the largest set of possible input datasets, due to the above differences between datasets. ',
     projectUrl: '', // Placeholder link
   },
