@@ -8,6 +8,7 @@ interface Project {
   imageUrl: string;
   description: string;
   projectUrl: string;
+  paperUrl?: string; // Optional link to a published paper
 }
 
 const projects: Project[] = [
@@ -52,8 +53,9 @@ const projects: Project[] = [
     category: 'cell-tracking',
     name: 'Cell Universe',
     imageUrl: '/assets/cell-tracking.gif',
-    description: 'Tracks the movement of cells from a video source. See the docs directory for our first published paper, also found at https://www.mdpi.com/1999-4893/15/2/51. The Python directory once worked well in 2D, with bacteria-shaped cells. The 3D Python code was experimental, but was abandoned after the complexity time it elapsed working due to Python\'s inherent scalability, at which point we moved to C++.',
+    description: 'Tracks the movement of cells from a video source. The Python directory once worked well in 2D, with bacteria-shaped cells. The 3D Python code was experimental, but was abandoned after the complexity time it elapsed working due to Python\'s inherent scalability, at which point we moved to C++.',
     projectUrl: 'https://github.com/waynebhayes/CellUniverse',
+    paperUrl: 'https://www.mdpi.com/1999-4893/15/2/51',
   },
 
   // Human Pose Recognition

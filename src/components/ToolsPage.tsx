@@ -52,6 +52,7 @@ const ToolsPage: React.FC = () => {
                   imageUrl={project.imageUrl}
                   description={project.description}
                   projectUrl={project.projectUrl}
+                  paperUrl={project.paperUrl}
                 />
               ))}
             </div>
@@ -67,6 +68,7 @@ const ToolsPage: React.FC = () => {
                   imageUrl={project.imageUrl}
                   description={project.description}
                   projectUrl={project.projectUrl}
+                  paperUrl={project.paperUrl}
                 />
               ))}
             </div>
@@ -82,6 +84,7 @@ const ToolsPage: React.FC = () => {
                   imageUrl={project.imageUrl}
                   description={project.description}
                   projectUrl={project.projectUrl}
+                  paperUrl={project.paperUrl}
                 />
               ))}
             </div>

@@ -435,3 +435,16 @@ select:focus-visible {
 .sidebar-section:last-child {
   margin-bottom: 0;
 }
+/* "Read the paper" link on project cards */
+.project-paper-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #3b5bab;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.project-paper-link:hover,
+.project-paper-link:focus {
+  color: #2d3e66;
+}
