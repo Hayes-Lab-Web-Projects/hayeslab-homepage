@@ -4,6 +4,12 @@ import ProjectCard from '../components/ProjectCard'; // Import ProjectCard
 import projects from '../data/projects'; // Import your project data
 import '../App.css'; // This page relies on App.css for styling
 
+// Turns a project id like 'pose prediction' into a valid anchor like 'project-pose-prediction'
+const toAnchorId = (id: string) => `project-${id.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
+// Projects without their own website scroll to their card on this page instead
+const sidebarHref = (projectUrl: string, id: string) => projectUrl || `#${toAnchorId(id)}`;
+
 const ToolsPage: React.FC = () => {
   const humanPoseProjects = projects.filter(p => p.category === 'human-pose-recognition');
   const networksProjects = projects.filter(p => p.category === 'networks');
@@ -22,7 +28,7 @@ const ToolsPage: React.FC = () => {
           {networksProjects.map(project => (
             <a 
               key={project.id} 
-              href={project.projectUrl} 
+              href={sidebarHref(project.projectUrl, project.id)}
               className="tool-link-sidebar"
               aria-describedby="networks-nav"
             >
@@ -34,7 +40,7 @@ const ToolsPage: React.FC = () => {
           {humanPoseProjects.map(project => (
             <a 
               key={project.id} 
-              href={project.projectUrl} 
+              href={sidebarHref(project.projectUrl, project.id)}
               className="tool-link-sidebar"
               aria-describedby="pose-nav"
             >
@@ -45,7 +51,7 @@ const ToolsPage: React.FC = () => {
           {galaxiesProjects.map(project => (
             <a 
               key={project.id} 
-              href={project.projectUrl} 
+              href={sidebarHref(project.projectUrl, project.id)}
               className="tool-link-sidebar"
               aria-describedby="galaxy-nav"
             >
@@ -62,7 +68,7 @@ const ToolsPage: React.FC = () => {
           {cellTrackingProjects.map(project => (
             <a 
               key={project.id} 
-              href={project.projectUrl} 
+              href={sidebarHref(project.projectUrl, project.id)}
               className="tool-link-sidebar"
               aria-describedby="cell-nav"
             >
@@ -96,6 +102,8 @@ const ToolsPage: React.FC = () => {
                   imageUrl={project.imageUrl}
                   description={project.description}
                   projectUrl={project.projectUrl}
+                  paperUrl={project.paperUrl}
+                  anchorId={toAnchorId(project.id)}
                 />
               ))}
             </div>
@@ -112,6 +120,8 @@ const ToolsPage: React.FC = () => {
                   imageUrl={project.imageUrl}
                   description={project.description}
                   projectUrl={project.projectUrl}
+                  paperUrl={project.paperUrl}
+                  anchorId={toAnchorId(project.id)}
                 />
               ))}
             </div>
@@ -127,6 +137,8 @@ const ToolsPage: React.FC = () => {
                   imageUrl={project.imageUrl}
                   description={project.description}
                   projectUrl={project.projectUrl}
+                  paperUrl={project.paperUrl}
+                  anchorId={toAnchorId(project.id)}
                 />
               ))}
             </div>
@@ -142,6 +154,8 @@ const ToolsPage: React.FC = () => {
                   imageUrl={project.imageUrl}
                   description={project.description}
                   projectUrl={project.projectUrl}
+                  paperUrl={project.paperUrl}
+                  anchorId={toAnchorId(project.id)}
                 />
               ))}
             </div>

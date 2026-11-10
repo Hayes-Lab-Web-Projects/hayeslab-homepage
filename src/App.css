@@ -201,6 +201,21 @@ main {
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
+/* Keep a card from hiding under the fixed header when the sidebar scrolls to it */
+.project-row {
+  scroll-margin-top: 100px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 .project-row:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
@@ -434,4 +449,17 @@ select:focus-visible {
 
 .sidebar-section:last-child {
   margin-bottom: 0;
+}
+/* "Read the paper" link on project cards */
+.project-paper-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #3b5bab;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.project-paper-link:hover,
+.project-paper-link:focus {
+  color: #2d3e66;
 }

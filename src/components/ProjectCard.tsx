@@ -8,11 +8,13 @@ interface ProjectCardProps {
   imageUrl: string; // Corresponds to image in our data
   description: string;
   projectUrl: string; // Corresponds to link in our data
+  paperUrl?: string; // Optional link to a published paper
+  anchorId?: string; // Lets the sidebar scroll to this card
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ name, imageUrl, description, projectUrl }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ name, imageUrl, description, projectUrl, paperUrl, anchorId }) => {
   return (
-    <article className="project-row">
+    <article className="project-row" id={anchorId}>
       {
         imageUrl && (
           <div className="project-image-container">
@@ -37,6 +39,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, imageUrl, description, 
           )}
         </h3>
         <p className="project-description">{description}</p>
+        {paperUrl && (
+          <a
+            href={paperUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-paper-link"
+            aria-label={`Read the ${name} paper (opens in new tab)`}
+          >
+            Read the paper →
+          </a>
+        )}
         
       </div>
       

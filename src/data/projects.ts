@@ -8,6 +8,7 @@ interface Project {
   imageUrl: string;
   description: string;
   projectUrl: string;
+  paperUrl?: string; // Optional link to a published paper
 }
 
 const projects: Project[] = [
@@ -19,7 +20,7 @@ const projects: Project[] = [
     name: 'Global Network Alignment (SANA)',
     imageUrl: '/assets/SANA.gif',
     description: 'The Simulating Annealing Network Aligner (SANA) is designed originally to align protein-protein interaction (PPI) networks, but now is able to align arbitrary undirected graphs, weighted on unweighted. It can produce near-optimal alignments of PPI-sized networks in about an hour, and it has been used to successfully align networks with up to 100,000 nodes and 100 million edges (though those alignments take about a week of CPU to complete).',
-    projectUrl: '/sana', // Placeholder link
+    projectUrl: 'https://sana.ics.uci.edu/', //Temporarily send to old working SANA Site
   },
   {
     id: 'local network alignment', // blant
@@ -52,8 +53,9 @@ const projects: Project[] = [
     category: 'cell-tracking',
     name: 'Cell Universe',
     imageUrl: '/assets/cell-tracking.gif',
-    description: 'Tracks the movement of cells from a video source. See the docs directory for our first published paper, also found at https://www.mbp.com/1999-4803/16/251. The Python directory once worked well in 2D, with bacteria-shaped cells. The 3D Python code was experimental, but was abandoned after the complexity time it elapsed working due to Python\'s inherent scalability, at which point we moved to C++.',
+    description: 'Tracks the movement of cells from a video source. The Python directory once worked well in 2D, with bacteria-shaped cells. The 3D Python code was experimental, but was abandoned after the complexity time it elapsed working due to Python\'s inherent scalability, at which point we moved to C++.',
     projectUrl: 'https://github.com/waynebhayes/CellUniverse',
+    paperUrl: 'https://www.mdpi.com/1999-4893/15/2/51',
   },
 
   // Human Pose Recognition
@@ -61,8 +63,8 @@ const projects: Project[] = [
     id: 'pose prediction',
     category: 'human-pose-recognition',
     name: 'Pose Prediction',
-    imageUrl: '../public/assets/pose-sample.png',
-    description: 'Estimating a person\'s \"pose\" (ie., the relative location of their limbs represented as a "skeleton") from a 2D image has many applications and is an active research area. There are many distinct data sets: each uses a different camera, different people, and in a different location; there are even slighly different skeletal representations between datasets. In this project we have a preliminary working method that works across datasets; our problem is testing it across the largest set of possible input datasets, due to the above differences between datasets. ',
+    imageUrl: '/assets/pose-under-development.svg',
+    description: 'Estimating a person\'s \"pose\" (ie., the relative location of their limbs represented as a "skeleton") from a 2D image has many applications and is an active research area. There are many distinct data sets: each uses a different camera, different people, and in a different location; there are even slightly different skeletal representations between datasets. In this project we have a preliminary working method that works across datasets; our problem is testing it across the largest set of possible input datasets, due to the above differences between datasets. ',
     projectUrl: '', // Placeholder link
   },
   // {
